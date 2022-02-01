@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cases GLOBAL</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+<figure class="highcharts-figure">
+    <div id="container_map"></div>
+    <div id="container"></div>
+
+    <p class="highcharts-description"></p>
+</figure>
+
+<div align="center" id="tableForecast"></div>
+
+<div align="center">
+    Forecast (days) <input id="pred" name="pred" type="number" size="3" value="14" min="7" max="42" step="7">
+    Back days (data use) <input id="calcRange" name="calcRange" type="number" size="3" value="42" min="14" max="42"
+                                step="7">
+
+    <label for="autoSet">Auto</label>
+    <input id="autoSet" name="autoSet" type="checkbox" value="on">
+
+    <input type="button" id="rebuild" value="Reset"
+           onclick="
+    mm = buildChart2(parseInt(document.getElementById('calcRange').value),parseInt(document.getElementById('pred').value));
+	    showDataTable(buildTimeDataSet(dailyCases,startDate,parseInt(document.getElementById('pred').value)),dailyCases,dvHWS,dailyCases.length-1,dsHolidays);
+  ">
+
+    RMSE(N)<input id="rmse" name="rmse" type="text" size="3" value="0" disabled>
+
+</div>
+
+<!--<div>
+    <script>
+        mm = buildChart2(parseInt(document.getElementById('calcRange').value), parseInt(document.getElementById('pred').value));
+        showDataTable(buildTimeDataSet(dailyCases, startDate, parseInt(document.getElementById('pred').value)), dailyCases, dvHWS, dailyCases.length - 1, dsHolidays);
+    </script>
+</div>-->
+
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/mapdata/custom/world-palestine-lowres.js"></script>
+<script src="/scripts/highcharts.js"></script>
+<script src="/scripts/PolynomialRegression.js"></script>
+<script src="/scripts/big.js"></script>
+<script src="/scripts/ssci.js"></script>
+<script src="/scripts/lib_covid.js"></script>
+<script src="/scripts/customEvents.js"></script>
+<script src="/scripts/parse_data.js"></script>
+<script src="/scripts/country_to_code.js"></script>
+<script src="/scripts/world.js"></script>
+
+</body>
+</html>
