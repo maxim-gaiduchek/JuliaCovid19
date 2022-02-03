@@ -1,4 +1,6 @@
 function getDailyCases(countryCode) {
+    countryCode = countryCode.toUpperCase();
+
     let dailyCases = [];
     let xhr = new XMLHttpRequest();
 

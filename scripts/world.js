@@ -34,11 +34,12 @@ function buildChartMap() {
             series: {
                 events: {
                     click: function(e) {
-                        if (e.target.point.options.value==1) {
-                            const url = e.target.point.options['hc-key']+".html";
-                            console.log(e.target.point);
-                            location.href= url;
-                        }
+                        console.log(e.point.options["hc-key"]);
+
+                        dailyCases = getDailyCases(e.point.options["hc-key"]);
+
+                        mm = buildChart2(parseInt(document.getElementById('calcRange').value), parseInt(document.getElementById('pred').value));
+                        showDataTable(buildTimeDataSet(dailyCases, startDate, parseInt(document.getElementById('pred').value)), dailyCases, dvHWS, dailyCases.length - 1, dsHolidays);
                     }
                 }
             }
@@ -59,26 +60,6 @@ function buildChartMap() {
                 format: '{point.name}'
             }
         }]
-
-        /*series: [{
-            name: 'Country',
-            data: data,
-            keys: ['hc-key', 'value'],
-            joinBy: 'hc-key',
-            dataLabels: {
-                enabled: true,
-                color: '#FFFFFF',
-                formatter: function () {
-                    if (this.point.value) {
-                        return this.point.name;
-                    }
-                }
-            },
-            tooltip: {
-                headerFormat: '',
-                pointFormat: '{point.name}'
-            }
-        }]*/
     });
 
     return fc;

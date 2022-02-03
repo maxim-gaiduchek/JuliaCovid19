@@ -126,29 +126,6 @@ function buildChart(data_) {
             }
         },
         colorAxis: {
-            // stops: [
-            //     [0, 'black'],
-            //     [1, '#00FF00'],
-            //     [10, '#FF0000']
-            // ],
-            // min: 1,
-            // max: 1000,
-            // type: 'logarithmic',
-            // minColor: '#00FF00',
-            // maxColor: '#FF0000',
-            // lineColor: 'black',
-            // lineWidth: 10
-            //
-            // dataClasses: [{
-            //     from: 0,
-            //     to: 0,
-            //     color: 'black',
-            //     name: 'Clinton'
-            // }],
-            // max: 50,
-            // type: 'logarithmic',
-            // minColor: 'green',
-            // maxColor: 'red',
             min: 1,
             minColor: '#10FF00',
             maxColor: '#FF0000'
