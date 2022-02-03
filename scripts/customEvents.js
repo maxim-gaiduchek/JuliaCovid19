@@ -18,7 +18,7 @@
         factory['default'] = factory;
         module.exports = factory;
     } else if (typeof define === 'function' && define.amd) {
-        define('highcharts-custom-events', ['highcharts'], function (Highcharts) {
+        define('highcharts-custom-events', ['scripts/highcharts'], function (Highcharts) {
             factory(Highcharts);
             factory.Highcharts = Highcharts;
             return factory;
