@@ -1,7 +1,7 @@
 function getDailyCases(countryCode) {
     countryCode = countryCode.toUpperCase();
 
-    let path = (window.location.host.contains(".github.io") ? ("/" + window.location.pathname.split("/")[1]) : "") +
+    let path = (window.location.host.indexOf(".github.io") > -1 ? ("/" + window.location.pathname.split("/")[1]) : "") +
         "/data/WHO-COVID-19-global-data.csv";
     let dailyCases = [];
     let xhr = new XMLHttpRequest();
@@ -28,7 +28,7 @@ function getDailyCases(countryCode) {
 }
 
 function getWorldNewCasesIn7Days() {
-    let path = (window.location.host.contains(".github.io") ? ("/" + window.location.pathname.split("/")[1]) : "") +
+    let path = (window.location.host.indexOf(".github.io") > -1 ? ("/" + window.location.pathname.split("/")[1]) : "") +
         "/data/WHO-COVID-19-global-table-data.csv";
     let newCases = [];
     let xhr = new XMLHttpRequest();
