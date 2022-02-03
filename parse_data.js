@@ -4,7 +4,7 @@ function getDailyCases(countryCode) {
     let dailyCases = [];
     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "/data/WHO-COVID-19-global-data.csv", false);
+    xhr.open("GET", "data/WHO-COVID-19-global-data.csv", false);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
@@ -29,7 +29,7 @@ function getWorldNewCasesIn7Days() {
     let newCases = [];
     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "/data/WHO-COVID-19-global-table-data.csv", false);
+    xhr.open("GET", "data/WHO-COVID-19-global-table-data.csv", false);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
