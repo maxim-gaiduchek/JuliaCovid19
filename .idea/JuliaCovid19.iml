@@ -9,5 +9,9 @@
     <orderEntry type="library" name="exporting" level="application" />
     <orderEntry type="library" name="ua-all" level="application" />
     <orderEntry type="library" name="world-palestine-lowres" level="application" />
+    <orderEntry type="library" name="highcharts" level="application" />
+    <orderEntry type="library" name="data" level="application" />
+    <orderEntry type="library" name="map" level="application" />
+    <orderEntry type="library" name="world" level="application" />
   </component>
 </module>
