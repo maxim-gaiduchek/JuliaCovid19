@@ -1,241 +1,255 @@
+const countryListAlpha3 = {
+    "Afghanistan": "AFG",
+    "Albania": "ALB",
+    "Algeria": "DZA",
+    "American Samoa": "ASM",
+    "Andorra": "AND",
+    "Angola": "AGO",
+    "Anguilla": "AIA",
+    "Antarctica": "ATA",
+    "Antigua and Barbuda": "ATG",
+    "Argentina": "ARG",
+    "Armenia": "ARM",
+    "Aruba": "ABW",
+    "Australia": "AUS",
+    "Austria": "AUT",
+    "Azerbaijan": "AZE",
+    "Bahamas": "BHS",
+    "Bahrain": "BHR",
+    "Bangladesh": "BGD",
+    "Barbados": "BRB",
+    "Belarus": "BLR",
+    "Belgium": "BEL",
+    "Belize": "BLZ",
+    "Benin": "BEN",
+    "Bermuda": "BMU",
+    "Bhutan": "BTN",
+    "Bolivia (Plurinational State of)": "BOL",
+    "Sint Eustatius": "BES",
+    "Bosnia and Herzegovina": "BIH",
+    "Botswana": "BWA",
+    "Bouvet Island": "BVT",
+    "Brazil": "BRA",
+    "British Indian Ocean Territory": "IOT",
+    "Brunei Darussalam": "BRN",
+    "Bulgaria": "BGR",
+    "Burkina Faso": "BFA",
+    "Burundi": "BDI",
+    "Cabo Verde": "CPV",
+    "Cambodia": "KHM",
+    "Cameroon": "CMR",
+    "Canada": "CAN",
+    "Cayman Islands": "CYM",
+    "Central African Republic": "CAF",
+    "Chad": "TCD",
+    "Chile": "CHL",
+    "China": "CHN",
+    "Christmas Island": "CXR",
+    "Cocos (Keeling) Islands": "CCK",
+    "Colombia": "COL",
+    "Comoros": "COM",
+    "Democratic Republic of the Congo": "COD",
+    "Congo": "COG",
+    "Cook Islands": "COK",
+    "Costa Rica": "CRI",
+    "Croatia": "HRV",
+    "Cuba": "CUB",
+    "Curaçao": "CUW",
+    "Cyprus": "CYP",
+    "Czechia": "CZE",
+    "Côte d'Ivoire": "CIV",
+    "Denmark": "DNK",
+    "Djibouti": "DJI",
+    "Dominica": "DMA",
+    "Dominican Republic": "DOM",
+    "Ecuador": "ECU",
+    "Egypt": "EGY",
+    "El Salvador": "SLV",
+    "Equatorial Guinea": "GNQ",
+    "Eritrea": "ERI",
+    "Estonia": "EST",
+    "Eswatini": "SWZ",
+    "Ethiopia": "ETH",
+    "Falkland Islands (Malvinas)": "FLK",
+    "Faroe Islands": "FRO",
+    "Fiji": "FJI",
+    "Finland": "FIN",
+    "France": "FRA",
+    "French Guiana": "GUF",
+    "French Polynesia": "PYF",
+    "French Southern Territories": "ATF",
+    "Gabon": "GAB",
+    "Gambia": "GMB",
+    "Georgia": "GEO",
+    "Germany": "DEU",
+    "Ghana": "GHA",
+    "Gibraltar": "GIB",
+    "Greece": "GRC",
+    "Greenland": "GRL",
+    "Grenada": "GRD",
+    "Guadeloupe": "GLP",
+    "Guam": "GUM",
+    "Guatemala": "GTM",
+    "Guernsey": "GGY",
+    "Guinea": "GIN",
+    "Guinea-Bissau": "GNB",
+    "Guyana": "GUY",
+    "Haiti": "HTI",
+    "Heard Island and McDonald Islands": "HMD",
+    "Holy See": "VAT",
+    "Honduras": "HND",
+    "Hong Kong": "HKG",
+    "Hungary": "HUN",
+    "Iceland": "ISL",
+    "India": "IND",
+    "Indonesia": "IDN",
+    "Iran (Islamic Republic of)": "IRN",
+    "Iraq": "IRQ",
+    "Ireland": "IRL",
+    "Isle of Man": "IMN",
+    "Israel": "ISR",
+    "Italy": "ITA",
+    "Jamaica": "JAM",
+    "Japan": "JPN",
+    "Jersey": "JEY",
+    "Jordan": "JOR",
+    "Kazakhstan": "KAZ",
+    "Kenya": "KEN",
+    "Kiribati": "KIR",
+    "Democratic People's Republic of Korea": "PRK",
+    "Republic of Korea": "KOR",
+    "Kuwait": "KWT",
+    "Kyrgyzstan": "KGZ",
+    "Lao People's Democratic Republic": "LAO",
+    "Latvia": "LVA",
+    "Lebanon": "LBN",
+    "Lesotho": "LSO",
+    "Liberia": "LBR",
+    "Libya": "LBY",
+    "Liechtenstein": "LIE",
+    "Lithuania": "LTU",
+    "Luxembourg": "LUX",
+    "Macao": "MAC",
+    "Madagascar": "MDG",
+    "Malawi": "MWI",
+    "Malaysia": "MYS",
+    "Maldives": "MDV",
+    "Mali": "MLI",
+    "Malta": "MLT",
+    "Marshall Islands": "MHL",
+    "Martinique": "MTQ",
+    "Mauritania": "MRT",
+    "Mauritius": "MUS",
+    "Mayotte": "MYT",
+    "Mexico": "MEX",
+    "Micronesia (Federated States of)": "FSM",
+    "Republic of Moldova": "MDA",
+    "Monaco": "MCO",
+    "Mongolia": "MNG",
+    "Montenegro": "MNE",
+    "Montserrat": "MSR",
+    "Morocco": "MAR",
+    "Mozambique": "MOZ",
+    "Myanmar": "MMR",
+    "Namibia": "NAM",
+    "Nauru": "NRU",
+    "Nepal": "NPL",
+    "Netherlands": "NLD",
+    "New Caledonia": "NCL",
+    "New Zealand": "NZL",
+    "Nicaragua": "NIC",
+    "Niger": "NER",
+    "Nigeria": "NGA",
+    "Niue": "NIU",
+    "Norfolk Island": "NFK",
+    "Northern Mariana Islands (Commonwealth of the)": "MNP",
+    "Norway": "NOR",
+    "Oman": "OMN",
+    "Pakistan": "PAK",
+    "Palau": "PLW",
+    "Palestine State of": "PSE",
+    "Panama": "PAN",
+    "Papua New Guinea": "PNG",
+    "Paraguay": "PRY",
+    "Peru": "PER",
+    "Philippines": "PHL",
+    "Pitcairn Islands": "PCN",
+    "Poland": "POL",
+    "Portugal": "PRT",
+    "Puerto Rico": "PRI",
+    "Qatar": "QAT",
+    "North Macedonia": "MKD",
+    "Romania": "ROU",
+    "Russian Federation": "RUS",
+    "Rwanda": "RWA",
+    "Réunion": "REU",
+    "Saint Barthélemy": "BLM",
+    "Saint Helena": "SHN",
+    "Saint Kitts and Nevis": "KNA",
+    "Saint Lucia": "LCA",
+    "Saint Martin": "MAF",
+    "Saint Pierre and Miquelon": "SPM",
+    "Saint Vincent and the Grenadines": "VCT",
+    "Samoa": "WSM",
+    "San Marino": "SMR",
+    "Sao Tome and Principe": "STP",
+    "Saudi Arabia": "SAU",
+    "Senegal": "SEN",
+    "Serbia": "SRB",
+    "Seychelles": "SYC",
+    "Sierra Leone": "SLE",
+    "Singapore": "SGP",
+    "Sint Maarten": "SXM",
+    "Slovakia": "SVK",
+    "Slovenia": "SVN",
+    "Solomon Islands": "SLB",
+    "Somalia": "SOM",
+    "South Africa": "ZAF",
+    "South Georgia and the South Sandwich Islands": "SGS",
+    "South Sudan": "SSD",
+    "Spain": "ESP",
+    "Sri Lanka": "LKA",
+    "Sudan": "SDN",
+    "Suriname": "SUR",
+    "Svalbard and Jan Mayen": "SJM",
+    "Sweden": "SWE",
+    "Switzerland": "CHE",
+    "Syrian Arab Republic": "SYR",
+    "Taiwan": "TWN",
+    "Tajikistan": "TJK",
+    "United Republic of Tanzania": "TZA",
+    "Thailand": "THA",
+    "Timor-Leste": "TLS",
+    "Togo": "TGO",
+    "Tokelau": "TKL",
+    "Tonga": "TON",
+    "Trinidad and Tobago": "TTO",
+    "Tunisia": "TUN",
+    "Turkey": "TUR",
+    "Turkmenistan": "TKM",
+    "Turks and Caicos Islands": "TCA",
+    "Tuvalu": "TUV",
+    "Uganda": "UGA",
+    "Ukraine": "UKR",
+    "United Arab Emirates": "ARE",
+    "The United Kingdom": "GBR",
+    "United States Minor Outlying Islands": "UMI",
+    "United States of America": "USA",
+    "Uruguay": "URY",
+    "Uzbekistan": "UZB",
+    "Vanuatu": "VUT",
+    "Venezuela (Bolivarian Republic of)": "VEN",
+    "Viet Nam": "VNM",
+    "British Virgin Islands": "VGB",
+    "United States Virgin Islands": "VIR",
+    "Wallis and Futuna": "WLF",
+    "Western Sahara": "ESH",
+    "Yemen": "YEM",
+    "Zambia": "ZMB",
+    "Zimbabwe": "ZWE",
+    "Åland Islands": "ALA"
+};
+
 function convertCountryToCode(country) {
-    switch (country) {
-        case "United States of America": return "us";
-        case "India": return "in";
-        case "Brazil": return "br";
-        case "France": return "fr";
-        case "The United Kingdom": return "gb";
-        case "Russian Federation": return "ru";
-        case "Turkey": return "tr";
-        case "Italy": return "it";
-        case "Germany": return "de";
-        case "Spain": return "es";
-        case "Argentina": return "ar";
-        case "Iran (Islamic Republic of)": return "ir";
-        case "Colombia": return "co";
-        case "Mexico": return "mx";
-        case "Poland": return "pl";
-        case "Netherlands": return "nl";
-        case "Indonesia": return "id";
-        case "Ukraine": return "ua";
-        case "South Africa": return "za";
-        case "Philippines": return "ph";
-        case "Peru": return "pe";
-        case "Belgium": return "be";
-        case "Czechia": return "cz";
-        case "Canada": return "ca";
-        case "Israel": return "il";
-        case "Malaysia": return "my";
-        case "Japan": return "jp";
-        case "Portugal": return "pt";
-        case "Thailand": return "th";
-        case "Viet Nam": return "vn";
-        case "Romania": return "ro";
-        case "Switzerland": return "ch";
-        case "Iraq": return "iq";
-        case "Australia": return "au";
-        case "Chile": return "cl";
-        case "Sweden": return "se";
-        case "Greece": return "gr";
-        case "Austria": return "at";
-        case "Bangladesh": return "bd";
-        case "Denmark": return "dk";
-        case "Serbia": return "rs";
-        case "Hungary": return "hu";
-        case "Pakistan": return "pk";
-        case "Kazakhstan": return "kz";
-        case "Jordan": return "jo";
-        case "Georgia": return "ge";
-        case "Ireland": return "ie";
-        case "Morocco": return "ma";
-        case "Cuba": return "cu";
-        case "Slovakia": return "sk";
-        case "Nepal": return "np";
-        case "Bulgaria": return "bg";
-        case "Croatia": return "hr";
-        case "Lebanon": return "lb";
-        case "Tunisia": return "tn";
-        case "Republic of Korea": return "kr";
-        case "Bolivia (Plurinational State of)": return "bo";
-        case "United Arab Emirates": return "ae";
-        case "Norway": return "no";
-        case "Belarus": return "by";
-        case "Slovenia": return "si";
-        case "Ecuador": return "ec";
-        case "Panama": return "pa";
-        case "Guatemala": return "gt";
-        case "Lithuania": return "lt";
-        case "Saudi Arabia": return "sa";
-        case "Costa Rica": return "cr";
-        case "Uruguay": return "uy";
-        case "Azerbaijan": return "az";
-        case "Sri Lanka": return "lk";
-        case "Paraguay": return "py";
-        case "Dominican Republic": return "do";
-        case "Kuwait": return "kw";
-        case "Myanmar": return "mm";
-        case "occupied Palestinian territory, including east Jerusalem": return "ps";
-        case "Finland": return "fi";
-        case "Venezuela (Bolivarian Republic of)": return "ve";
-        case "Ethiopia": return "et";
-        case "Puerto Rico": return "pr";
-        case "Republic of Moldova": return "md";
-        case "Mongolia": return "mn";
-        case "Libya": return "ly";
-        case "Egypt": return "eg";
-        case "Latvia": return "lv";
-        case "Honduras": return "hn";
-        case "Bahrain": return "bh";
-        case "Armenia": return "am";
-        case "Singapore": return "sg";
-        case "Bosnia and Herzegovina": return "ba";
-        case "Estonia": return "ee";
-        case "Qatar": return "qa";
-        case "Oman": return "om";
-        case "Kenya": return "ke";
-        case "Zambia": return "zm";
-        case "North Macedonia": return "mk";
-        case "Albania": return "al";
-        case "Cyprus": return "cy";
-        case "Nigeria": return "ng";
-        case "Botswana": return "bw";
-        case "Algeria": return "dz";
-        case "Zimbabwe": return "zw";
-        case "Uzbekistan": return "uz";
-        case "Mozambique": return "mz";
-        case "Montenegro": return "me";
-        case "Kosovo[1]": return "xk";
-        case "Kyrgyzstan": return "kg";
-        case "Réunion": return "re";
-        case "Afghanistan": return "af";
-        case "Uganda": return "ug";
-        case "Luxembourg": return "lu";
-        case "Ghana": return "gh";
-        case "Namibia": return "na";
-        case "China": return "cn";
-        case "Maldives": return "mv";
-        case "El Salvador": return "sv";
-        case "Lao People's Democratic Republic": return "la";
-        case "Rwanda": return "rw";
-        case "Jamaica": return "jm";
-        case "Cambodia": return "kh";
-        case "Cameroon": return "cm";
-        case "Trinidad and Tobago": return "tt";
-        case "Guadeloupe": return "gp";
-        case "Angola": return "ao";
-        case "Martinique": return "mq";
-        case "Democratic Republic of the Congo": return "cd";
-        case "Senegal": return "sn";
-        case "Malawi": return "mw";
-        case "Côte d’Ivoire": return "ci";
-        case "French Guiana": return "gf";
-        case "Suriname": return "sr";
-        case "Mauritius": return "mu";
-        case "Iceland": return "is";
-        case "Eswatini": return "sz";
-        case "Malta": return "mt";
-        case "Fiji": return "fj";
-        case "Guyana": return "gy";
-        case "Madagascar": return "mg";
-        case "Sudan": return "sd";
-        case "Mauritania": return "mr";
-        case "Cabo Verde": return "cv";
-        case "Syrian Arab Republic": return "sy";
-        case "Belize": return "bz";
-        case "French Polynesia": return "pf";
-        case "Gabon": return "ga";
-        case "Barbados": return "bb";
-        case "Burundi": return "bi";
-        case "Papua New Guinea": return "pg";
-        case "Seychelles": return "sc";
-        case "Curaçao": return "cw";
-        case "Togo": return "tg";
-        case "Mayotte": return "yt";
-        case "Guinea": return "gn";
-        case "Andorra": return "ad";
-        case "Aruba": return "aw";
-        case "United Republic of Tanzania": return "tz";
-        case "Bahamas": return "bs";
-        case "Lesotho": return "ls";
-        case "Jersey": return "je";
-        case "Mali": return "ml";
-        case "Haiti": return "ht";
-        case "Benin": return "bj";
-        case "Somalia": return "so";
-        case "Guam": return "gu";
-        case "Congo": return "cg";
-        case "Isle of Man": return "im";
-        case "Saint Lucia": return "lc";
-        case "Burkina Faso": return "bf";
-        case "New Caledonia": return "nc";
-        case "Timor-Leste": return "tl";
-        case "Faroe Islands": return "fo";
-        case "Tajikistan": return "tj";
-        case "South Sudan": return "ss";
-        case "Brunei Darussalam": return "bn";
-        case "New Zealand": return "nz";
-        case "Equatorial Guinea": return "gq";
-        case "Djibouti": return "dj";
-        case "United States Virgin Islands": return "vi";
-        case "Central African Republic": return "cf";
-        case "Cayman Islands": return "ky";
-        case "Nicaragua": return "ni";
-        case "Gibraltar": return "gi";
-        case "San Marino": return "sm";
-        case "Grenada": return "gd";
-        case "Gambia": return "gm";
-        case "Guernsey": return "gg";
-        case "Yemen": return "ye";
-        case "Greenland": return "gl";
-        case "Bermuda": return "bm";
-        case "Eritrea": return "er";
-        case "Saint Martin": return "mf";
-        case "Sint Maarten": return "sx";
-        case "Liechtenstein": return "li";
-        case "Dominica": return "dm";
-        case "Niger": return "ne";
-        case "Monaco": return "mc";
-        case "Saint Vincent and the Grenadines": return "vc";
-        case "Comoros": return "km";
-        case "Sierra Leone": return "sl";
-        case "Guinea-Bissau": return "gw";
-        case "Liberia": return "lr";
-        case "Chad": return "td";
-        case "Antigua and Barbuda": return "ag";
-        case "Bonaire": return "xa";
-        case "Sao Tome and Principe": return "st";
-        case "British Virgin Islands": return "vg";
-        case "Turks and Caicos Islands": return "tc";
-        case "Saint Kitts and Nevis": return "kn";
-        case "Bhutan": return "bt";
-        case "Northern Mariana Islands (Commonwealth of the)": return "mp";
-        case "Saint Barthélemy": return "bl";
-        case "Anguilla": return "ai";
-        case "Palau": return "pw";
-        case "Solomon Islands": return "sb";
-        case "Saint Pierre and Miquelon": return "pm";
-        case "Kiribati": return "ki";
-        case "Wallis and Futuna": return "wf";
-        case "Sint Eustatius": return "xb";
-        case "Saba": return "xc";
-        case "Montserrat": return "ms";
-        case "Falkland Islands (Malvinas)": return "fk";
-        case "Samoa": return "ws";
-        case "Holy See": return "va";
-        case "American Samoa": return "as";
-        case "Vanuatu": return "vu";
-        case "Marshall Islands": return "mh";
-        case "Tonga": return "to";
-        case "Cook Islands": return "ck";
-        case "Democratic People's Republic of Korea": return "kp";
-        case "Micronesia (Federated States of)": return "fm";
-        case "Nauru": return "nr";
-        case "Niue": return "nu";
-        case "Pitcairn Islands": return "pn";
-        case "Saint Helena": return "sh";
-        case "Tokelau": return "tk";
-        case "Turkmenistan": return "tm";
-        case "Tuvalu": return "tv";
-        default: return "";
-    }
+    return countryListAlpha3[country];
 }

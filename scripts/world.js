@@ -27,9 +27,6 @@ function buildChartMap() {
             let countries = {},
                 mapChart,
                 countryChart,
-                numRegex = /^[0-9\.]+$/,
-                lastCommaRegex = /,\s$/,
-                quoteRegex = /\"/g,
                 categories = CSVtoArray(csv[2]).slice(4);
 
             // Parse the CSV into arrays, one array each country
@@ -38,7 +35,7 @@ function buildChartMap() {
 
                 countries[row[0]] = {
                     name: row[0],
-                    code3: row[1],
+                    code3: convertCountryToCode(row[1]),
                     data: parseInt(row[5])
                 };
             });
