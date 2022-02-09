@@ -247,7 +247,11 @@ const countryListAlpha3 = {
     "Yemen": "YEM",
     "Zambia": "ZMB",
     "Zimbabwe": "ZWE",
-    "Åland Islands": "ALA"
+    "Åland Islands": "ALA",
+    "Kosovo[1]": "XKX",
+    "occupied Palestinian territory, including east Jerusalem": "PSE",
+    "Côte d’Ivoire": "CIV",
+    "Saba": "BES"
 };
 
 function convertCountryToCode(country) {
